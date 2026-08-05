@@ -97,7 +97,7 @@ function Home() {
         <motion.div
           aria-hidden="true"
           className="mt-24 flex items-center gap-3 text-muted-foreground"
-          animate={reduced ? undefined : { y: [0, 8, 0] }}
+          animate={reduced ? {} : { y: [0, 8, 0] }}
           transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
         >
           <ArrowDown className="size-4" />
