@@ -12,7 +12,7 @@ const projectsQuery = queryOptions({
   queryFn: () => getProjects(),
 });
 
-export const Route = createFileRoute("/projects")({
+export const Route = createFileRoute("/projects/")({
   loader: ({ context }) => context.queryClient.ensureQueryData(projectsQuery),
   head: () => ({
     meta: [
