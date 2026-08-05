@@ -195,7 +195,7 @@ function CaseStudy() {
             <Reveal
               key={asset.id}
               delay={Math.min(index, 4) * 0.05}
-              className={index % 5 === 0 ? "md:col-span-2" : undefined}
+              className={index % 5 === 0 ? "md:col-span-2" : ""}
             >
               <figure>
                 <div className="relative overflow-hidden bg-surface">
