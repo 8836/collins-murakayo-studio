@@ -224,8 +224,7 @@
 @utility link-underline {
   position: relative;
   display: inline-block;
-}
-@utility link-underline {
+
   &::after {
     content: "";
     position: absolute;
@@ -242,3 +241,24 @@
     transform-origin: left;
   }
 }
+
+@utility input-line {
+  width: 100%;
+  min-height: 2.75rem;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--color-hairline);
+  padding-block: 0.5rem;
+  font-size: 0.9375rem;
+  color: var(--color-foreground);
+  transition: border-color 0.3s var(--ease-editorial);
+
+  &::placeholder {
+    color: var(--color-muted-foreground);
+  }
+  &:focus {
+    outline: none;
+    border-color: var(--color-accent);
+  }
+}
+
