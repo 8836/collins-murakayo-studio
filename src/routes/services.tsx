@@ -15,9 +15,9 @@ const engagements = [
     body: "A full marketing set: social, print, large format and presentation assets built from one grid and one type scale.",
   },
   {
-    title: "Reporting & dashboards",
-    scope: "2 — 6 weeks",
-    body: "Data model, chart grammar and a Power BI or Excel reporting pack designed for decisions, not decoration.",
+    title: "Video & production",
+    scope: "1 — 4 weeks",
+    body: "Storyboard, shoot, edit and colour for promotional or music video — or production-ready artwork for print, CNC and large-format output.",
   },
 ];
 
@@ -28,12 +28,12 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "Brand identity, marketing and presentation design, print and packaging production, plus data visualization, dashboards and business reporting.",
+          "Brand identity, social and marketing design, print, packaging and large-format production, plus promotional and music video for Nairobi and international clients.",
       },
       { property: "og:title", content: "Services — Collins Murakayo" },
       {
         property: "og:description",
-        content: "Design and analytics engagements for brands that need clarity and evidence.",
+        content: "Design, production and video engagements for brands that need clarity and craft.",
       },
     ],
   }),
@@ -48,8 +48,8 @@ function ServicesPage() {
         Four capabilities, one standard of precision.
       </h1>
       <p className="lede mt-8">
-        Engagements run end to end: strategy, design, production artwork and the reporting that
-        tells you whether it worked.
+        Engagements run end to end: strategy, design, production artwork, machine output and the
+        video that carries it.
       </p>
 
       <div className="mt-16 grid gap-px overflow-hidden border border-hairline bg-hairline sm:grid-cols-2">
@@ -82,9 +82,9 @@ function ServicesPage() {
       </div>
 
       <div className="rule-top mt-24 pt-16">
-        <h2 className="display-lg">Beyond design</h2>
+        <h2 className="display-lg">Beyond graphic design</h2>
         <p className="lede mt-6">
-          The analytical half of the practice — the work that keeps the creative half honest.
+          The production and motion half of the practice — where the work leaves the screen.
         </p>
         <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {beyondDesign.map((item) => (
