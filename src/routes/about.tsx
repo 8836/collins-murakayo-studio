@@ -10,13 +10,13 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Collins Murakayo is a multidisciplinary designer and data analyst based in Nairobi, working across brand identity, marketing design and business intelligence.",
+          "Collins Murakayo Mulechi is a graphic designer and videographer based in Nairobi, working across brand identity, print and large-format production, and promotional video.",
       },
       { property: "og:title", content: "About — Collins Murakayo" },
       {
         property: "og:description",
         content:
-          "A practice built on systems thinking: brand identity, communication design and analytics under one discipline.",
+          "A practice built on systems thinking: identity, production design and video under one discipline.",
       },
     ],
   }),
@@ -28,7 +28,7 @@ function AboutPage() {
     <section className="shell pt-16 pb-28">
       <p className="eyebrow">About</p>
       <h1 className="display-xl mt-6 max-w-4xl">
-        A designer who reads the numbers, and an analyst who cares how it looks.
+        A designer who knows the machines the work comes out of.
       </h1>
 
       <div className="mt-16 grid gap-16 lg:grid-cols-12">
@@ -37,17 +37,18 @@ function AboutPage() {
           <p className="text-sm leading-relaxed text-muted-foreground">
             My work sits between two disciplines that rarely share a room. On one side: brand
             identity, packaging, editorial and campaign design — the craft of making an
-            organisation legible. On the other: dashboards, reporting and process work — the
-            discipline of proving whether any of it moved the business.
+            organisation legible. On the other: production and film — CNC, large-format printing,
+            installation, and promotional video, where the idea has to physically exist.
           </p>
           <p className="text-sm leading-relaxed text-muted-foreground">
-            Holding both means I design with constraints already understood: production budgets,
-            print tolerances, reporting cycles, the operational reality behind the brief. Clients
-            get fewer surprises and work that survives contact with the real world.
+            Holding both means I design with the constraints already understood: substrate, print
+            tolerance, cut path, install conditions and viewing distance. I have delivered
+            supermarket-wide branding and two large-scale billboards deployed in Nairobi and
+            Machakos, so clients get fewer surprises and work that survives the real world.
           </p>
           <p className="text-sm leading-relaxed text-muted-foreground">
             Based in {profile.location}. Currently taking on brand systems, campaign programmes and
-            reporting engagements.
+            video production.
           </p>
         </div>
 

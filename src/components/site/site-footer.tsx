@@ -36,10 +36,16 @@ export function SiteFooter() {
               </a>
             </li>
             <li>
-              <a href={profile.behance} target="_blank" rel="noreferrer" className="link-underline hover:text-foreground">
-                Behance
+              <a href={profile.instagram} target="_blank" rel="noreferrer" className="link-underline hover:text-foreground">
+                Instagram
               </a>
             </li>
+            <li>
+              <a href={profile.showreel} target="_blank" rel="noreferrer" className="link-underline hover:text-foreground">
+                Showreel
+              </a>
+            </li>
+
             <li>
               <a href={profile.whatsapp} target="_blank" rel="noreferrer" className="link-underline hover:text-foreground">
                 WhatsApp

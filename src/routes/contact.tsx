@@ -134,10 +134,21 @@ function ContactPage() {
                 </a>
               </li>
               <li>
-                <a href={profile.behance} target="_blank" rel="noreferrer" className="link-underline text-foreground">
-                  Behance
+                <a href={profile.instagram} target="_blank" rel="noreferrer" className="link-underline text-foreground">
+                  Instagram
                 </a>
               </li>
+              <li>
+                <a href={profile.tiktok} target="_blank" rel="noreferrer" className="link-underline text-foreground">
+                  TikTok
+                </a>
+              </li>
+              <li>
+                <a href={profile.showreel} target="_blank" rel="noreferrer" className="link-underline text-foreground">
+                  Showreel (YouTube)
+                </a>
+              </li>
+
             </ul>
           </div>
           <div>

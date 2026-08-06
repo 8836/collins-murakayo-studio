@@ -10,12 +10,12 @@ export const Route = createFileRoute("/resume")({
       {
         name: "description",
         content:
-          "Experience, skills, education and certifications for Collins Murakayo — multidisciplinary designer, creative strategist and data analyst.",
+          "Experience, skills, education and production capabilities for Collins Murakayo Mulechi — graphic designer and videographer based in Nairobi.",
       },
       { property: "og:title", content: "Resume — Collins Murakayo" },
       {
         property: "og:description",
-        content: "Career timeline across brand design, marketing production and business intelligence.",
+        content: "Career timeline across brand design, print production and video content.",
       },
     ],
   }),
@@ -95,7 +95,7 @@ function ResumePage() {
             </ul>
           </div>
           <div>
-            <h2 className="font-display text-2xl tracking-tight">Certifications</h2>
+            <h2 className="font-display text-2xl tracking-tight">Production capabilities</h2>
             <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
               {certifications.map((item) => (
                 <li key={item} className="border-t border-hairline pt-3">

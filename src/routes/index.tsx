@@ -17,17 +17,17 @@ export const Route = createFileRoute("/")({
   loader: ({ context }) => context.queryClient.ensureQueryData(projectsQuery),
   head: () => ({
     meta: [
-      { title: "Collins Murakayo — Design, Brand Identity & Data" },
+      { title: "Collins Murakayo — Brand Identity, Print & Video" },
       {
         name: "description",
         content:
-          "Designing systems that connect creativity, business and data. Brand identity, marketing design, packaging, editorial and data visualization work.",
+          "Brand systems, print and large-format production, packaging, social creatives and promotional video from Nairobi-based designer Collins Murakayo Mulechi.",
       },
-      { property: "og:title", content: "Collins Murakayo — Design, Brand Identity & Data" },
+      { property: "og:title", content: "Collins Murakayo — Brand Identity, Print & Video" },
       {
         property: "og:description",
         content:
-          "A multidisciplinary practice spanning brand identity, marketing design, print production and business intelligence.",
+          "A design and video practice spanning identity systems, large-format production and promotional film.",
       },
     ],
   }),
@@ -198,12 +198,12 @@ function Home() {
             <div>
               <p className="eyebrow">Beyond design</p>
               <h2 id="beyond-heading" className="display-lg mt-4 max-w-2xl">
-                Analytical thinking, held to the same standard.
+                Video and production, held to the same standard.
               </h2>
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-              Dashboards, reporting and operational work presented with the same rigour as the
-              design practice — because businesses buy outcomes, not artefacts.
+              Promotional film, motion and machine-side production carried with the same rigour as
+              the design work — because clients buy finished, installed outcomes.
             </p>
           </div>
 
@@ -221,7 +221,7 @@ function Home() {
       {/* CTA --------------------------------------------------------------- */}
       <section className="shell py-28 text-center">
         <h2 className="display-lg mx-auto max-w-3xl">
-          Available for brand, campaign and reporting work.
+          Available for brand, campaign and video work.
         </h2>
         <Link
           to="/contact"

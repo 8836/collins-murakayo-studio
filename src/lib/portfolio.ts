@@ -84,7 +84,6 @@ const EXT_META: Record<string, { kind: AssetKind; software: string | null }> = {
   xls: { kind: "spreadsheet", software: "Microsoft Excel" },
   xlsx: { kind: "spreadsheet", software: "Microsoft Excel" },
   csv: { kind: "spreadsheet", software: "Microsoft Excel" },
-  pbix: { kind: "spreadsheet", software: "Power BI" },
   ppt: { kind: "presentation", software: "Microsoft PowerPoint" },
   pptx: { kind: "presentation", software: "Microsoft PowerPoint" },
   zip: { kind: "archive", software: "Archive" },
@@ -142,6 +141,8 @@ type Rule = {
   summary: string;
   services: string[];
   keywords?: string[];
+  /** Explicit year override when the filenames don't carry a reliable date. */
+  year?: string;
 };
 
 const RULES: Rule[] = [
@@ -175,6 +176,7 @@ const RULES: Rule[] = [
     test: /^(cover art|vinyl record)/i,
     slug: "album-artwork-vinyl-series",
     title: "Vinyl & Album Artwork Series",
+    year: "2026",
     client: "Independent Artists",
     industry: "Music & Entertainment",
     category: "Album Artwork",
@@ -185,7 +187,21 @@ const RULES: Rule[] = [
     keywords: ["album", "vinyl", "music", "cover"],
   },
   {
-    test: /^(feelings|kamal|saave|alimurax|tweeps|tweeps logo)/i,
+    test: /^(alimurax|tweeps)/i,
+    slug: "logo-collections",
+    title: "Client Logo Exploration Collections",
+    year: "2025",
+    client: "Alimurax Insurance Agency & others",
+    industry: "Insurance & Professional Services",
+    category: "Logo & Identity",
+    discipline: "Logo Systems & Marks",
+    summary:
+      "Full exploration suites for client identity briefs — multiple mark routes, lockups and palette directions presented as one comparable collection.",
+    services: ["Logo Design", "Identity Exploration", "Brand Guidelines"],
+    keywords: ["logo", "mark", "identity", "insurance", "collection"],
+  },
+  {
+    test: /^(feelings|kamal|saave)/i,
     slug: "artist-single-covers",
     title: "Artist Single & Release Covers",
     client: "Independent Artists",
@@ -214,6 +230,7 @@ const RULES: Rule[] = [
     test: /^whatsapp image/i,
     slug: "field-documentation",
     title: "Field & Production Documentation",
+    year: "2025",
     client: "Various",
     industry: "Photography",
     category: "Photography",
@@ -264,16 +281,17 @@ const RULES: Rule[] = [
   },
   {
     test: /^(screenshot)/i,
-    slug: "reporting-dashboards",
-    title: "Reporting & Dashboard Design",
-    client: "Business Operations",
-    industry: "Business Intelligence",
-    category: "Data Visualization",
-    discipline: "Data Visualisation & Reporting",
+    slug: "signage-installation",
+    title: "Signage & Installation Record",
+    year: "2025",
+    client: "Great Nairobi East College & others",
+    industry: "Education, Retail & Signage",
+    category: "Print Design",
+    discipline: "Signage & Large Format Install",
     summary:
-      "Operational dashboards and reporting views: fewer charts, clearer decisions, consistent visual grammar across every metric.",
-    services: ["Dashboard Design", "Data Visualisation", "Business Reporting"],
-    keywords: ["power bi", "dashboard", "excel", "reporting", "data"],
+      "Fabricated signage and large-format branding photographed on site — artwork drawn for the machine, the substrate and the final viewing distance.",
+    services: ["Signage Design", "Large Format", "Installation Support"],
+    keywords: ["signage", "install", "large format", "fabrication", "site"],
   },
   {
     test: /^(20 percent|special offer|offers approved|happy new month|father's day|eid ul adha|grand opening|hi cousins|customer service|cv water|scan qr)/i,
@@ -379,7 +397,7 @@ export function buildProjects(entries: DriveEntry[]): Project[] {
       title,
       client: meta.client,
       industry: meta.industry,
-      year: yearFrom(bucket.entries),
+      year: rule?.year ?? yearFrom(bucket.entries),
       category: meta.category,
       discipline: meta.discipline,
       summary: meta.summary,

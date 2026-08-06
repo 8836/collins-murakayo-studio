@@ -36,7 +36,7 @@ export function SiteHeader() {
             Collins Murakayo
           </span>
           <span className="hidden text-[11px] tracking-[0.18em] text-muted-foreground uppercase sm:inline">
-            Design · Data
+            Design · Video
           </span>
         </Link>
 
