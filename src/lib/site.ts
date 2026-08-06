@@ -1,22 +1,24 @@
 export const profile = {
-  name: "Collins Murakayo",
+  name: "Collins Murakayo Mulechi",
+  shortName: "Collins Murakayo",
   roles: [
     "Graphic Designer",
-    "Brand Identity Designer",
-    "Creative Strategist",
-    "Data Analyst",
-    "Business Operations",
+    "Videographer",
+    "Brand Identity",
+    "Print & Large Format",
+    "Motion & Video",
   ],
-  statement: "Designing systems that connect creativity, business, and data.",
+  statement: "Brand systems, print production and video, built to production standard.",
   intro:
-    "I help businesses communicate clearly through branding, visual identity, marketing design, presentation design, data visualization, and strategic creative systems.",
+    "I design brand identities, print and large-format production, social creatives and promotional video — and I run the machines that output them. From logo systems to billboards deployed in Nairobi and Machakos, the work is made to survive real production, not just look good in a deck.",
   location: "Nairobi, Kenya — working with teams worldwide",
-  // TODO: confirm these contact details before publishing.
-  email: "hello@collinsmurakayo.com",
-  phone: "+254 700 000 000",
-  whatsapp: "https://wa.me/254700000000",
-  linkedin: "https://www.linkedin.com/in/collinsmurakayo",
-  behance: "https://www.behance.net/collinsmurakayo",
+  email: "cmurakayo@gmail.com",
+  phone: "+254 704 302 646",
+  whatsapp: "https://wa.me/254704302646",
+  linkedin: "https://linkedin.com/in/collins-murakayo-39022532a",
+  instagram: "https://instagram.com/c.kol_inc",
+  tiktok: "https://tiktok.com/@c.kol_inc",
+  showreel: "https://youtu.be/f232ZLvTh1o",
 };
 
 export const philosophy = [
@@ -25,12 +27,12 @@ export const philosophy = [
     body: "A logo is an outcome, not a strategy. I build the grid, type scale and decision rules first so every asset that follows stays coherent.",
   },
   {
-    title: "Clarity is commercial",
-    body: "Design that is easy to understand is easier to buy, easier to operate and cheaper to maintain. Precision is a business advantage.",
+    title: "Designed for production",
+    body: "Substrate, print method, cut path and viewing distance are design decisions. Knowing the machines means artwork that installs cleanly the first time.",
   },
   {
-    title: "Evidence over opinion",
-    body: "Analytics, reporting and operational data tell me whether the work performed. I design with the measurement built in.",
+    title: "Clarity is commercial",
+    body: "Work that is easy to understand is easier to buy, easier to operate and cheaper to maintain. Precision is a business advantage.",
   },
 ];
 
@@ -38,111 +40,146 @@ export const services = [
   {
     group: "Brand & Identity",
     items: [
-      "Brand Identity",
-      "Corporate Branding",
+      "Brand Identity Systems",
       "Logo & Mark Design",
+      "Logo Exploration Suites",
       "Brand Guidelines",
-      "Creative Direction",
+      "Corporate Stationery",
     ],
   },
   {
     group: "Communication Design",
     items: [
-      "Marketing Design",
-      "Presentation Design",
-      "Annual Reports",
-      "Editorial Design",
-      "Infographics",
+      "Social Media Creatives",
+      "Marketing & Promotions",
+      "Poster & Editorial Layout",
+      "Album & Cover Artwork",
+      "Image Editing & Retouching",
     ],
   },
   {
-    group: "Production",
+    group: "Print & Production",
     items: [
-      "Print Design",
-      "Packaging",
-      "Large Format & Signage",
-      "Social Media Campaigns",
-      "Prepress & Artwork",
+      "Large Format & Billboards",
+      "Signage & Interior Graphics",
+      "Packaging & Dielines",
+      "CNC, Print & Cut Workflows",
+      "Prepress & Production Artwork",
     ],
   },
   {
-    group: "Data & Operations",
+    group: "Video & Motion",
     items: [
-      "Data Visualization",
-      "Dashboard Design",
-      "Business Intelligence",
-      "Business Reporting",
-      "Process Optimisation",
+      "Promotional Video",
+      "Music & Short-Form Video",
+      "Storyboarding & Content Planning",
+      "Colour & Edit (DaVinci, CapCut)",
+      "Audio Production",
     ],
   },
 ];
 
 export const skills = [
-  { group: "Design", items: ["Adobe Illustrator", "Adobe Photoshop", "Adobe InDesign", "Adobe Acrobat", "Affinity Designer", "CorelDRAW", "Figma", "Canva"] },
-  { group: "Data & Business", items: ["Power BI", "Microsoft Excel", "SQL", "Microsoft Office", "Business Operations"] },
-  { group: "Strategy", items: ["Brand Strategy", "Creative Direction", "Data Visualization", "Campaign Planning"] },
+  {
+    group: "Design",
+    items: [
+      "Adobe Illustrator",
+      "Adobe Photoshop",
+      "Adobe InDesign",
+      "Affinity Designer",
+      "Affinity Photo",
+      "Affinity Publisher",
+      "Canva",
+      "UI/UX Principles",
+    ],
+  },
+  {
+    group: "Video & Audio",
+    items: ["DaVinci Resolve", "CapCut", "Adobe Audition", "Cubase", "Ableton Live"],
+  },
+  {
+    group: "Production & Business",
+    items: [
+      "CNC & Large Format Machines",
+      "Print & Cut Workflows",
+      "Printer Maintenance",
+      "Production Scheduling",
+      "Microsoft Excel",
+      "Google Workspace",
+    ],
+  },
 ];
 
 export const timeline = [
   {
-    period: "2023 — Present",
-    role: "Senior Multidisciplinary Designer & Creative Strategist",
-    org: "Independent Practice",
+    period: "Jan 2026 — Present",
+    role: "Freelance Video Content Producer",
+    org: "Self-employed, Nairobi",
     detail:
-      "Leading brand identity, campaign and reporting work for hospitality, retail, logistics and music clients — from strategy through production artwork.",
+      "Producing and editing promotional and social video for music and brand clients. Released music video work including \"CKol — Liquid Gold (feat. Kiwado)\".",
   },
   {
-    period: "2021 — 2023",
-    role: "Brand & Marketing Designer",
-    org: "Agency & In-house Engagements",
+    period: "May 2025 — Aug 2025",
+    role: "Graphic Designer",
+    org: "China Village Supermarket, Machakos / Nairobi",
     detail:
-      "Built repeatable marketing systems, promotions kits and large-format programmes across multi-location retail businesses.",
+      "Designed and installed interior retail graphics, produced two large-scale billboards deployed in Nairobi and Machakos, and led branding across supermarket and office locations. Delivered posters, vouchers and document templates, and supported the Marketing Executive on campaign concepts and milestone tracking.",
   },
   {
-    period: "2020 — 2021",
-    role: "Business Operations & Data Analyst",
-    org: "Commercial Operations",
+    period: "Dec 2024 — Mar 2025",
+    role: "Graphic Designer & Operations Coordinator",
+    org: "Bevoch Family Graphics, Mlolongo, Machakos",
     detail:
-      "Owned reporting, Excel automation and Power BI dashboards used by management for pricing, stock and performance decisions.",
+      "Coordinated the full project lifecycle from client brief to production and installation, maintained daily cash books and sales logs, and implemented job tracking that improved accountability and inventory accuracy.",
+  },
+  {
+    period: "Jul 2024 — Nov 2024",
+    role: "Technical Operations & Design Associate",
+    org: "Pari Graphics Ltd, Kitengela, Kajiado",
+    detail:
+      "Operated multi-machine digital production systems (CNC, printing and cutting), scheduled production to meet client deadlines, maintained transaction and stock records, and improved coordination between sales, design and production.",
   },
 ];
 
 export const education = [
-  { title: "Design & Visual Communication", org: "Professional training and continuing practice" },
-  { title: "Data Analytics & Business Intelligence", org: "Power BI, SQL and Excel specialisation" },
+  {
+    title: "BSc Software Engineering — expected December 2026",
+    org: "University of Eastern Africa, Baraton — Nandi County, Kenya",
+  },
 ];
 
 export const certifications = [
-  "Power BI Data Analysis",
-  "Advanced Microsoft Excel",
-  "Brand Strategy Fundamentals",
-  "Print Production & Prepress",
+  "CNC & large-format branding machinery",
+  "Printing, cutting and finishing workflows",
+  "Printer maintenance & calibration",
+  "Prepress and production artwork",
+  "Production scheduling & job tracking",
 ];
 
 export const beyondDesign = [
   {
-    title: "Power BI Dashboards",
-    body: "Executive dashboards that compress operational noise into a handful of decisions — designed with the same typographic discipline as the print work.",
+    title: "Promotional Video",
+    body: "Brand and product films written, shot and cut end-to-end — built to hold attention in the first two seconds of a feed.",
   },
   {
-    title: "Business Reporting",
-    body: "Monthly and annual reporting packs: consistent chart grammar, honest scales, and a narrative a board can read in ten minutes.",
+    title: "Music Video & Short Form",
+    body: "Artist releases and short-form edits, including \"CKol — Liquid Gold (feat. Kiwado)\", with colour and pacing treated as design decisions.",
   },
   {
-    title: "Excel Automation",
-    body: "Templates and models that remove manual re-entry, reduce error rates and make month-end predictable.",
+    title: "Storyboarding & Planning",
+    body: "Content calendars, shot lists and storyboards so a shoot day produces a month of assets instead of one post.",
   },
   {
-    title: "SQL & Data Modelling",
-    body: "Queries and data models that make reporting repeatable instead of rebuilt every cycle.",
+    title: "Audio Production",
+    body: "Mixing, sound design and voice cleanup in Audition, Cubase and Ableton — the half of video most people neglect.",
   },
   {
-    title: "Process Optimisation",
-    body: "Mapping how work actually flows, then removing the steps that only exist because nobody questioned them.",
+    title: "Machine-Side Production",
+    body: "CNC, print and cut operation with maintenance and calibration, so artwork is drawn for the machine that will output it.",
   },
   {
-    title: "Business Intelligence",
-    body: "Turning scattered operational data into a single source of truth teams actually trust and use.",
+    title: "Operations & Tracking",
+    body: "Job tracking, stock control and record keeping from coordinating live print floors — deadlines held, discrepancies caught early.",
   },
 ];
 
@@ -150,6 +187,6 @@ export const values = [
   "Craft over speed",
   "Systems over one-offs",
   "Clarity over decoration",
-  "Evidence over assumption",
+  "Buildable, not just beautiful",
   "Discretion and reliability",
 ];
