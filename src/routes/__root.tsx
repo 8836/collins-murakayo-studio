@@ -79,7 +79,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Collins Murakayo — Graphic Designer & Videographer, Nairobi" },
+      { title: "Collins Murakayo — Virtual Assistant, Content Manager & Designer" },
       {
         name: "description",
         content:
@@ -109,7 +109,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "Person",
           name: "Collins Murakayo",
-          jobTitle: "Graphic Designer & Videographer",
+          jobTitle: "Virtual Assistant, Content Manager, Content Producer & Graphic Designer",
           email: "cmurakayo@gmail.com",
           telephone: "+254704302646",
           address: { "@type": "PostalAddress", addressLocality: "Nairobi", addressCountry: "KE" },
