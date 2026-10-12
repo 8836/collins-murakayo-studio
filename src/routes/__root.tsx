@@ -6,6 +6,7 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
@@ -36,7 +37,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -79,7 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Collins Murakayo — Graphic Designer & Videographer, Nairobi" },
+      { title: "Collins Murakayo — Virtual Assistant, Content Manager & Designer" },
       {
         name: "description",
         content:
@@ -109,7 +110,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "Person",
           name: "Collins Murakayo",
-          jobTitle: "Graphic Designer & Videographer",
+          jobTitle: "Virtual Assistant, Content Manager, Content Producer & Graphic Designer",
           email: "cmurakayo@gmail.com",
           telephone: "+254704302646",
           address: { "@type": "PostalAddress", addressLocality: "Nairobi", addressCountry: "KE" },

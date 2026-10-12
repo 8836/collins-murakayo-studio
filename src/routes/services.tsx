@@ -1,7 +1,7 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 
 import { Reveal } from "@/components/site/reveal";
-import { beyondDesign, services } from "@/lib/site";
+import { beyondDesign, recentExperience, services, supportCaseStudy } from "@/lib/site";
 
 const engagements = [
   {
@@ -28,9 +28,11 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "Brand identity, social and marketing design, print, packaging and large-format production, plus promotional and music video for Nairobi and international clients.",
+          "Virtual assistance, content management, content production, graphic design, digital marketing and email marketing support.",
       },
       { property: "og:title", content: "Services — Collins Murakayo" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
       {
         property: "og:description",
         content: "Design, production and video engagements for brands that need clarity and craft.",
@@ -45,18 +47,19 @@ function ServicesPage() {
     <section className="shell pt-16 pb-28">
       <p className="eyebrow">Services</p>
       <h1 className="display-xl mt-6 max-w-4xl">
-        Four capabilities, one standard of precision.
+        How I Can Help.
       </h1>
       <p className="lede mt-8">
-        Engagements run end to end: strategy, design, production artwork, machine output and the
-        video that carries it.
+        Six ways I support businesses — from organized day-to-day assistance to polished content
+        and design.
       </p>
 
-      <div className="mt-16 grid gap-px overflow-hidden border border-hairline bg-hairline sm:grid-cols-2">
+      <div className="mt-16 grid gap-px overflow-hidden border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-3">
         {services.map((group, index) => (
           <Reveal key={group.group} delay={index * 0.05} className="bg-background p-8 md:p-10">
             <p className="font-mono text-xs text-accent">0{index + 1}</p>
             <h2 className="mt-4 font-display text-2xl tracking-tight">{group.group}</h2>
+            <p className="mt-3 text-sm leading-relaxed text-foreground">{group.body}</p>
             <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
               {group.items.map((item) => (
                 <li key={item} className="border-b border-hairline pb-3 last:border-0 last:pb-0">
@@ -66,6 +69,38 @@ function ServicesPage() {
             </ul>
           </Reveal>
         ))}
+      </div>
+
+      <div className="rule-top mt-24 pt-16">
+        <h2 className="display-lg">Recent experience</h2>
+        <p className="lede mt-6">{recentExperience.period} of experience across each of these areas.</p>
+        <ul className="mt-10 flex flex-wrap gap-2">
+          {recentExperience.areas.map((area) => (
+            <li key={area} className="rounded-full border border-hairline px-4 py-2 text-xs text-muted-foreground">
+              {area} <span className="ml-2 font-mono text-accent">{recentExperience.period}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="rule-top mt-24 pt-16">
+        <p className="eyebrow">{supportCaseStudy.category}</p>
+        <h2 className="display-lg mt-4">{supportCaseStudy.title}</h2>
+        <p className="lede mt-6">{supportCaseStudy.description}</p>
+        <div className="mt-10 grid gap-10 md:grid-cols-12">
+          <div className="md:col-span-8">
+            <h3 className="eyebrow">My contribution</h3>
+            <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
+              {supportCaseStudy.contribution.map((item) => (
+                <li key={item} className="border-t border-hairline pt-3">{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="md:col-span-4">
+            <h3 className="eyebrow">Tools</h3>
+            <p className="mt-4 text-sm text-muted-foreground">{supportCaseStudy.tools.join(", ")}</p>
+          </div>
+        </div>
       </div>
 
       <div className="rule-top mt-24 pt-16">
