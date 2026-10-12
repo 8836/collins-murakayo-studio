@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { Reveal } from "@/components/site/reveal";
-import { certifications, education, profile, services, skills, timeline } from "@/lib/site";
+import { certifications, education, profile, recentExperience, services, skills, timeline } from "@/lib/site";
 
 export const Route = createFileRoute("/resume")({
   head: () => ({
@@ -60,6 +60,17 @@ function ResumePage() {
         </div>
       </div>
 
+      <div className="rule-top mt-24 pt-16">
+        <h2 className="display-lg">Recent areas — {recentExperience.period} each</h2>
+        <ul className="mt-8 flex flex-wrap gap-2">
+          {recentExperience.areas.map((area) => (
+            <li key={area} className="rounded-full border border-hairline px-3 py-1.5 text-xs text-muted-foreground">
+              {area} · {recentExperience.period}
+            </li>
+          ))}
+        </ul>
+      </div>
+
       <div className="rule-top mt-24 grid gap-16 pt-16 lg:grid-cols-12">
         <div className="lg:col-span-7">
           <h2 className="display-lg">Skills</h2>
@@ -109,7 +120,7 @@ function ResumePage() {
 
       <div className="rule-top mt-24 pt-16">
         <h2 className="display-lg">Service areas</h2>
-        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((group) => (
             <div key={group.group}>
               <h3 className="eyebrow">{group.group}</h3>
