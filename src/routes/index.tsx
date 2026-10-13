@@ -51,7 +51,7 @@ function Home() {
           transition={{ duration: 0.8 }}
           className="eyebrow"
         >
-          {profile.roles.join(" · ")}
+          {profile.location}
         </motion.p>
 
         <h1 className="display-xl mt-8 max-w-5xl">
