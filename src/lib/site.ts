@@ -7,7 +7,8 @@ export const profile = {
     "Content Producer",
     "Graphic Designer",
   ],
-  headline: "Virtual Assistant | Content Manager | Content Producer",
+  headline: "Collins Murakayo",
+  heroRoles: ["Virtual Assistant", "Content Manager", "Content Producer"],
   statement: "Creative execution meets organized business support.",
   intro:
     "I help businesses stay organized, manage their content, and turn ideas into polished digital assets. I combine virtual assistance, content coordination, video production, graphic design, and digital marketing support with a technical mindset and strong attention to detail.",
