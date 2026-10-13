@@ -72,7 +72,21 @@ function Home() {
           ))}
         </h1>
 
-        <Reveal delay={0.5} className="mt-10 grid gap-10 md:grid-cols-12">
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-base font-medium tracking-wide text-muted-foreground md:text-lg"
+        >
+          {profile.heroRoles.map((role, i) => (
+            <span key={role} className="flex items-center gap-4">
+              {i > 0 && <span className="size-1 rounded-full bg-primary" aria-hidden />}
+              <span className="text-foreground/90">{role}</span>
+            </span>
+          ))}
+        </motion.p>
+
+        <Reveal delay={0.55} className="mt-10 grid gap-10 md:grid-cols-12">
           <p className="lede md:col-span-7">{profile.homeIntro}</p>
           <div className="flex flex-wrap items-start gap-3 md:col-span-5 md:justify-end">
             <Link
