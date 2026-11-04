@@ -424,9 +424,10 @@ export function buildProjects(entries: DriveEntry[]): Project[] {
     });
   }
 
-  return projects
-    .filter((project) => project.assetCount > 0)
-    .sort((a, b) => b.assetCount - a.assetCount || a.title.localeCompare(b.title));
+  const curated = projects.filter((project) => project.assetCount > 0);
+  return [...CURATED_PROJECTS, ...curated].sort(
+    (a, b) => b.assetCount - a.assetCount || a.title.localeCompare(b.title),
+  );
 }
 
 export function categoriesOf(projects: Project[]): string[] {
