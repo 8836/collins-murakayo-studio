@@ -7,6 +7,8 @@
  * automatically — no code edits required.
  */
 
+import { CURATED_PROJECTS } from "./portfolio.curated";
+
 export type DriveEntry = {
   id: string;
   name: string;
