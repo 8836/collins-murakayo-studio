@@ -4,14 +4,15 @@
  */
 import type { Asset, Project } from "./portfolio";
 
-import coverSpread from "@/assets/mucapa-brochure-cover-spread.asset.json";
+// Contact details on these three images are pre-blurred before publishing.
+import coverSpread from "@/assets/mucapa-brochure-cover-spread-blurred.asset.json";
 import coverFront from "@/assets/mucapa-brochure-cover-top.asset.json";
-import coverBack from "@/assets/mucapa-brochure-cover-bottom.asset.json";
+import coverBack from "@/assets/mucapa-brochure-cover-bottom-blurred.asset.json";
 import insideSpread from "@/assets/mucapa-brochure-inside-spread.asset.json";
 import insideLeft from "@/assets/mucapa-brochure-inside-left.asset.json";
 import insideRight from "@/assets/mucapa-brochure-inside-right.asset.json";
 import cardFront from "@/assets/mucapa-business-card-front.asset.json";
-import cardBack from "@/assets/mucapa-business-card-back.asset.json";
+import cardBack from "@/assets/mucapa-business-card-back-blurred.asset.json";
 import logo from "@/assets/mucapa-logo.asset.json";
 
 function localAsset(name: string, pointer: { url: string }, ext: string): Asset {
