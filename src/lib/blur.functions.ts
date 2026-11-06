@@ -105,11 +105,11 @@ function sanitizeRegions(parsed: unknown): ContactRegion[] {
   for (const entry of raw.slice(0, 60)) {
     if (!entry || typeof entry !== "object") continue;
     const record = entry as Record<string, unknown>;
-    const label = typeof record.label === "string" ? record.label.slice(0, 60) : "contact detail";
-    const x = Number(record.x);
-    const y = Number(record.y);
-    const w = Number(record.w);
-    const h = Number(record.h);
+    const label = typeof record["label"] === "string" ? record["label"].slice(0, 60) : "contact detail";
+    const x = Number(record["x"]);
+    const y = Number(record["y"]);
+    const w = Number(record["w"]);
+    const h = Number(record["h"]);
     if (![x, y, w, h].every((value) => Number.isFinite(value))) continue;
     const left = Math.min(Math.max(x, 0), 1);
     const top = Math.min(Math.max(y, 0), 1);
@@ -193,6 +193,6 @@ export const detectContactRegions = createServerFn({ method: "POST" })
   });
 
 async function getRequestIp(): Promise<string | null> {
-  const { getRequestHeader } = await import("@tanstack/react-start");
+  const { getRequestHeader } = await import("@tanstack/react-start/server");
   return getRequestHeader("x-forwarded-for")?.split(",")[0]?.trim() ?? null;
 }
