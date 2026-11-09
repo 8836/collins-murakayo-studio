@@ -8,3 +8,7 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Blur tool: the AI model only returns normalised bounding boxes (`src/lib/blur.functions.ts`); blurring happens on a browser canvas so pixels outside the boxes are never altered. Why: generative image edits subtly change the whole design.
+- Client artwork with contact details is published only as pre-blurred `*-blurred.asset.json` copies. Why: client privacy.

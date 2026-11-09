@@ -54,6 +54,7 @@ function StudioPage() {
   const [regionCount, setRegionCount] = useState(0);
   const [targets, setTargets] = useState<string[]>(DETECTION_TARGETS.slice(0, 4));
   const [strong, setStrong] = useState(true);
+  const [hasImage, setHasImage] = useState(false);
 
   const sourceRef = useRef<HTMLImageElement | null>(null);
   const pristineRef = useRef<HTMLCanvasElement | null>(null);
@@ -67,6 +68,7 @@ function StudioPage() {
     sourceRef.current = null;
     pristineRef.current = null;
     setFileName(null);
+    setHasImage(false);
     if (canvasRef.current) {
       const ctx = canvasRef.current.getContext("2d");
       ctx?.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
@@ -94,6 +96,7 @@ function StudioPage() {
       sourceRef.current = image;
       pristineRef.current = canvas;
       setFileName(file.name);
+      setHasImage(true);
 
       const view = canvasRef.current;
       if (view) {
@@ -191,7 +194,6 @@ function StudioPage() {
   }, [fileName]);
 
   const busy = stage === "working";
-  const hasImage = pristineRef.current !== null;
 
   return (
     <section className="shell pt-16 pb-28">
@@ -319,9 +321,11 @@ function StudioPage() {
 
           <div className="lg:col-span-7">
             <div className="overflow-hidden rounded-2xl border border-hairline bg-card/40">
-              {hasImage ? (
-                <canvas ref={canvasRef} className="mx-auto block max-h-[70vh] w-auto max-w-full" />
-              ) : (
+              <canvas
+                ref={canvasRef}
+                className={hasImage ? "mx-auto block max-h-[70vh] w-auto max-w-full" : "hidden"}
+              />
+              {hasImage ? null : (
                 <div className="flex h-72 items-center justify-center text-sm text-muted-foreground">
                   Your image preview appears here.
                 </div>
@@ -386,7 +390,7 @@ function applyBlur(canvas: HTMLCanvasElement, regions: ContactRegion[], strong: 
 
     // Downscale the region, then scale it back up: a smooth, unrecognisable smear
     // that keeps the surrounding colours and lighting.
-    const factor = strong ? 24 : 10;
+    const factor = Math.max(4, Math.round(h / (strong ? 3 : 6)));
     const small = document.createElement("canvas");
     small.width = Math.max(1, Math.round(w / factor));
     small.height = Math.max(1, Math.round(h / factor));
@@ -395,7 +399,15 @@ function applyBlur(canvas: HTMLCanvasElement, regions: ContactRegion[], strong: 
     smallCtx.drawImage(canvas, x, y, w, h, 0, 0, small.width, small.height);
 
     ctx.save();
-    ctx.filter = `blur(${Math.max(4, Math.round(w * (strong ? 0.03 : 0.012)))}px)`;
+    ctx.beginPath();
+    ctx.rect(x, y, w, h);
+    ctx.clip();
+    // Opaque smeared base first, so the original text can never show through
+    // the soft, partly transparent edges of the blur filter.
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = "high";
+    ctx.drawImage(small, 0, 0, small.width, small.height, x, y, w, h);
+    ctx.filter = `blur(${Math.max(6, Math.round(h * (strong ? 0.45 : 0.25)))}px)`;
     ctx.drawImage(small, 0, 0, small.width, small.height, x, y, w, h);
     ctx.restore();
   }
