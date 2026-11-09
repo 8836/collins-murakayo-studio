@@ -402,9 +402,12 @@ function applyBlur(canvas: HTMLCanvasElement, regions: ContactRegion[], strong: 
     ctx.beginPath();
     ctx.rect(x, y, w, h);
     ctx.clip();
-    ctx.filter = `blur(${Math.max(6, Math.round(h * (strong ? 0.45 : 0.25)))}px)`;
-    // draw twice so the edges of the clipped area stay filled
+    // Opaque smeared base first, so the original text can never show through
+    // the soft, partly transparent edges of the blur filter.
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = "high";
     ctx.drawImage(small, 0, 0, small.width, small.height, x, y, w, h);
+    ctx.filter = `blur(${Math.max(6, Math.round(h * (strong ? 0.45 : 0.25)))}px)`;
     ctx.drawImage(small, 0, 0, small.width, small.height, x, y, w, h);
     ctx.restore();
   }
