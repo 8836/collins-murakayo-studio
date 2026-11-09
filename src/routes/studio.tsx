@@ -54,6 +54,7 @@ function StudioPage() {
   const [regionCount, setRegionCount] = useState(0);
   const [targets, setTargets] = useState<string[]>(DETECTION_TARGETS.slice(0, 4));
   const [strong, setStrong] = useState(true);
+  const [hasImage, setHasImage] = useState(false);
 
   const sourceRef = useRef<HTMLImageElement | null>(null);
   const pristineRef = useRef<HTMLCanvasElement | null>(null);
@@ -67,6 +68,7 @@ function StudioPage() {
     sourceRef.current = null;
     pristineRef.current = null;
     setFileName(null);
+    setHasImage(false);
     if (canvasRef.current) {
       const ctx = canvasRef.current.getContext("2d");
       ctx?.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
@@ -94,6 +96,7 @@ function StudioPage() {
       sourceRef.current = image;
       pristineRef.current = canvas;
       setFileName(file.name);
+      setHasImage(true);
 
       const view = canvasRef.current;
       if (view) {
@@ -191,7 +194,6 @@ function StudioPage() {
   }, [fileName]);
 
   const busy = stage === "working";
-  const hasImage = pristineRef.current !== null;
 
   return (
     <section className="shell pt-16 pb-28">
@@ -319,9 +321,11 @@ function StudioPage() {
 
           <div className="lg:col-span-7">
             <div className="overflow-hidden rounded-2xl border border-hairline bg-card/40">
-              {hasImage ? (
-                <canvas ref={canvasRef} className="mx-auto block max-h-[70vh] w-auto max-w-full" />
-              ) : (
+              <canvas
+                ref={canvasRef}
+                className={hasImage ? "mx-auto block max-h-[70vh] w-auto max-w-full" : "hidden"}
+              />
+              {hasImage ? null : (
                 <div className="flex h-72 items-center justify-center text-sm text-muted-foreground">
                   Your image preview appears here.
                 </div>
