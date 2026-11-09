@@ -390,7 +390,7 @@ function applyBlur(canvas: HTMLCanvasElement, regions: ContactRegion[], strong: 
 
     // Downscale the region, then scale it back up: a smooth, unrecognisable smear
     // that keeps the surrounding colours and lighting.
-    const factor = strong ? 24 : 10;
+    const factor = Math.max(4, Math.round(h / (strong ? 3 : 6)));
     const small = document.createElement("canvas");
     small.width = Math.max(1, Math.round(w / factor));
     small.height = Math.max(1, Math.round(h / factor));
@@ -399,7 +399,12 @@ function applyBlur(canvas: HTMLCanvasElement, regions: ContactRegion[], strong: 
     smallCtx.drawImage(canvas, x, y, w, h, 0, 0, small.width, small.height);
 
     ctx.save();
-    ctx.filter = `blur(${Math.max(4, Math.round(w * (strong ? 0.03 : 0.012)))}px)`;
+    ctx.beginPath();
+    ctx.rect(x, y, w, h);
+    ctx.clip();
+    ctx.filter = `blur(${Math.max(6, Math.round(h * (strong ? 0.45 : 0.25)))}px)`;
+    // draw twice so the edges of the clipped area stay filled
+    ctx.drawImage(small, 0, 0, small.width, small.height, x, y, w, h);
     ctx.drawImage(small, 0, 0, small.width, small.height, x, y, w, h);
     ctx.restore();
   }
